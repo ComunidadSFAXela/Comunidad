@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const ComunidadModel = require("../../models/Comunidad/ComunidadModel.js");
+const ComunidadModel = require("../../models/Comunidad/comunidadModel.js");
 
 //======= crear nueva comunidad =======
 router.post("/comunidad/add", async (req, res) => {
