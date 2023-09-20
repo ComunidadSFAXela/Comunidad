@@ -19,7 +19,6 @@ const C_comunidad_nueva = () => {
   const [nombreCursoCreci, setNombreCursoCreci] = useState("");
   const [lugar, setLugar] = useState("");
   const [horarios, setHorarios] = useState("");
-  zzz;
 
   const handleSubmit = async () => {
     const dataFinal = {
