@@ -163,6 +163,7 @@ router.post("/persona/getrbyretiro", async (req, res) => {
     // Asumiendo que idretiro es una cadena (si es ObjectId, convierte adecuadamente)
     const personas = await Persona.find({ "retiros.idretiro": idretiro })
       .populate("retiros.idretiro", "nombreRetiro")
+      .populate("idcomunidad", "nombreComunidad")
       .populate("crecimientos.idcursocreci", "nombreCursoCreci") // Cargar datos relacionados del retiro
       .where({ estado: true })
       .sort({ nombre: 1 })

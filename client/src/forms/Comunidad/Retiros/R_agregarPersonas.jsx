@@ -19,6 +19,9 @@ import {
   TableBody,
   TableRow,
   TableCell,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
 } from "@nextui-org/react";
 import "react-dropdown/style.css";
 import toast, { Toaster } from "react-hot-toast";
@@ -26,11 +29,11 @@ import API_URL from "../../../config.js";
 import Loading from "../../../components/Loading.jsx";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-import { Link as Linky } from "react-router-dom";
 
-const R_buscar_retiro = () => {
+const R_agregarPersonas = () => {
   const [valueretiro, setValueretiro] = useState(new Set([]));
   const [retiroes, setretiroes] = useState([]);
+  const [popOver, setPopOver] = useState(false);
 
   ///////////////////////////////
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -85,6 +88,7 @@ const R_buscar_retiro = () => {
       }
       const data = await response.json();
       setResultadosPersonas(data);
+      console.log(data);
       toast.success("Persona por retiro filtrado con éxito");
       setLoading(false);
     } catch (error) {
@@ -131,6 +135,7 @@ const R_buscar_retiro = () => {
         <Loading />
       ) : resultadosPersonas.length > 0 ? (
         <>
+          <h1 className="text-3xl font-bold mx-auto mb-6 text-center">Personas que están en este retiro</h1>
           <div className="flex w-full flex-row flex-wrap gap-4 pb-5">
             {resultadosPersonas?.map((persona, idx) => (
               <div
@@ -315,14 +320,6 @@ const R_buscar_retiro = () => {
                 </Table>
               </ModalBody>
               <ModalFooter>
-                <Linky
-                  to={`/comunidad/persona/${personSelected._id}`}
-                  state={{ personSelected }}
-                  className="bg-warning flex items-center px-4 py-2 rounded-xl hover:bg-warning-400"
-                >
-                  Editar
-                </Linky>
-
                 <Button color="primary" onPress={onClose}>
                   Cerrar
                 </Button>
@@ -334,5 +331,4 @@ const R_buscar_retiro = () => {
     </div>
   );
 };
-
-export default R_buscar_retiro;
+export default R_agregarPersonas;
