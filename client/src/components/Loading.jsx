@@ -4,7 +4,7 @@ import { CircularProgress } from "@nextui-org/react";
 const Loading = () => {
   return (
     <div className="grid place-items-center">
-      <CircularProgress size="lg" aria-label="Cargand0..." />
+      <CircularProgress size="lg" aria-label="Cargando..." />
     </div>
   );
 };
