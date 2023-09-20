@@ -91,17 +91,17 @@ const C_nuevo = () => {
           type="text"
           label="Nombre Crecimiento o curso"
           placeholder="Ingrese el nombre del curso"
-          onChange={(e) => setNombreCursoCreci(e.target.value)}
+          value={nombreCursoCreci}
+          onValueChange={setNombreCursoCreci}
         />
         <Input
           type="Date"
           label="Fecha de inicio"
           placeholder="Fecha inicio"
+          value={fechaInicio}
           onChange={(e) =>
             setFechaInicio(
-              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                .toISOString()
-                .split("T")[0]
+              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
             )
           }
         />
@@ -109,11 +109,10 @@ const C_nuevo = () => {
           type="Date"
           label="Fecha final"
           placeholder="Fecha final"
+          value={fechaFinal}
           onChange={(e) =>
             setFechaFinal(
-              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                .toISOString()
-                .split("T")[0]
+              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
             )
           }
         />
@@ -121,25 +120,29 @@ const C_nuevo = () => {
           type="Number"
           label="Ofrenda"
           placeholder="Ingrese una ofrenda"
-          onChange={(e) => setOfrenda(e.target.value)}
+          value={ofrenda}
+          onValueChange={setOfrenda}
         />
         <Input
           type="text"
           label="Horarios"
           placeholder="Ingrese los horarios"
-          onChange={(e) => setHorarios(e.target.value)}
+          value={horarios}
+          onValueChange={setHorarios}
         />
         <Input
           type="text"
           label="Lugar / ubicación"
           placeholder="Ingrese una dirección"
-          onChange={(e) => setLugar(e.target.value)}
+          value={lugar}
+          onValueChange={setLugar}
         />
         <Input
           type="text"
           label="Dirigido Por"
           placeholder="Ingrese quien dirigió el curso"
-          onChange={(e) => setEncargados(e.target.value)}
+          value={encargados}
+          onValueChange={setEncargados}
         />
         <p className="font-bold text-[18px] sm:hidden -mb-2">Dirigido a:</p>
         <Dropdown options={tipo} onChange={handleSelectTipo} value={selectedTipo} />

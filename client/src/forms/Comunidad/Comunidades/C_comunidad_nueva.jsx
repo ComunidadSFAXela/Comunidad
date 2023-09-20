@@ -18,7 +18,8 @@ const C_comunidad_nueva = () => {
   // useState para los demás campos que no sean dropdown
   const [nombreCursoCreci, setNombreCursoCreci] = useState("");
   const [lugar, setLugar] = useState("");
-  const [horarios, setHorarios] = useState("");zzz
+  const [horarios, setHorarios] = useState("");
+  zzz;
 
   const handleSubmit = async () => {
     const dataFinal = {
@@ -69,19 +70,22 @@ const C_comunidad_nueva = () => {
           type="text"
           label="Nombre de la comunidad"
           placeholder="Ingrese el nombre de la comunidad"
-          onChange={(e) => setNombreCursoCreci(e.target.value)}
+          value={nombreCursoCreci}
+          onValueChange={setNombreCursoCreci}
         />
         <Input
           type="text"
           label="Lugar / ubicación"
           placeholder="Ingrese una dirección"
-          onChange={(e) => setLugar(e.target.value)}
+          value={lugar}
+          onValueChange={setLugar}
         />
         <Input
           type="text"
           label="Horarios"
           placeholder="Ingrese los horarios"
-          onChange={(e) => setHorarios(e.target.value)}
+          value={horarios}
+          onValueChange={setHorarios}
         />
         <p className="font-bold text-[18px] sm:hidden -mb-2">Tipo:</p>
         <Dropdown options={tipo} onChange={handleSelectTipo} value={selectedTipo} />

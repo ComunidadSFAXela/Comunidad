@@ -126,13 +126,15 @@ const C_persona_nuevo = () => {
           label="Nombre completo"
           isRequired
           placeholder="Ingrese el nombre completo"
-          onChange={(e) => setNombre(e.target.value)}
+          value={nombre}
+          onValueChange={setNombre}
         />
         <Input
           type="text"
           label="Teléfono"
+          value={telefono}
           placeholder="Ingrese el número de teléfono"
-          onChange={(e) => setTelefono(e.target.value)}
+          onValueChange={setTelefono}
         />
         <Select
           label="Comunidad"
@@ -152,12 +154,13 @@ const C_persona_nuevo = () => {
             <SelectItem value="cargando" text="Cargando comunidades..." disabled />
           )}
         </Select>
-        <Input type="text" label="Trabaja en..." placeholder="Trabajo" onChange={(e) => setTrabajo(e.target.value)} />
+        <Input type="text" label="Trabaja en..." placeholder="Trabajo" value={trabajo} onValueChange={setTrabajo} />
         <Input
           type="text"
           label="Dirección"
           placeholder="Ingrese una dirección"
-          onChange={(e) => setDireccion(e.target.value)}
+          value={direccion}
+          onValueChange={setDireccion}
         />
         <p className="font-bold sm:hidden -mb-2">Seleccione el tipo de Dones</p>
         <div className="flex flex-col gap-3">
@@ -179,11 +182,10 @@ const C_persona_nuevo = () => {
           type="Date"
           label="Fecha primer retiro"
           placeholder="Ingrese una dirección"
+          value={fechaPrimerRetiro}
           onChange={(e) =>
             setFechaPrimerRetiro(
-              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                .toISOString()
-                .split("T")[0]
+              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
             )
           }
         />
@@ -192,11 +194,10 @@ const C_persona_nuevo = () => {
           type="Date"
           label="Fecha Primer crecimiento / curso"
           placeholder="Ingrese una dirección"
+          value={fechaPrimerCrecimiento}
           onChange={(e) =>
             setFechaPrimerCrecimiento(
-              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                .toISOString()
-                .split("T")[0]
+              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
             )
           }
         />
@@ -205,11 +206,10 @@ const C_persona_nuevo = () => {
           type="Date"
           label="Fecha inició a ser Servidor"
           placeholder="Ingrese un servidor"
+          value={fechaServidor}
           onChange={(e) =>
             setFechaServidor(
-              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                .toISOString()
-                .split("T")[0]
+              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
             )
           }
         />
@@ -218,11 +218,10 @@ const C_persona_nuevo = () => {
           type="Date"
           label="Fecha inició a ser Subcoordinador"
           placeholder="Ingrese un subcoordinador"
+          value={fechaSubcoordinador}
           onChange={(e) =>
             setFechaSubcoordinador(
-              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                .toISOString()
-                .split("T")[0]
+              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
             )
           }
         />
@@ -231,18 +230,18 @@ const C_persona_nuevo = () => {
           type="Date"
           label="Fecha inició a ser Coordinador"
           placeholder="Ingrese una dirección"
+          value={fechaCoordinador}
           onChange={(e) =>
             setFechaCoordinador(
-              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                .toISOString()
-                .split("T")[0]
+              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
             )
           }
         />
         <Textarea
           type="text"
           placeholder="Ingrese alguna observación"
-          onChange={(e) => setObservaciones(e.target.value)}
+          value={observaciones}
+          onValueChange={setObservaciones}
         ></Textarea>
       </div>
       <Button color="success" className="w-11/12 m-auto sm:w-3/5 text-white" onClick={handleSubmit}>

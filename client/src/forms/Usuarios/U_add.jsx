@@ -155,23 +155,23 @@ const U_add = () => {
           type="text"
           label="Nombre de la persona"
           isRequired
-          defaultValue={nombre}
+          value={nombre}
+          onValueChange={setNombre}
           placeholder="Ingrese el nombre de la persona"
-          onChange={(e) => setNombre(e.target.value)}
         />
         <Input
           type="text"
           label="Nombre de usuario"
           placeholder="Ingrese un nombre de usuario"
-          defaultValue={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={username}
+          onValueChange={setUsername}
         />
         <Input
           type="text"
           label="Contraseña"
-          defaultValue={password}
+          value={password}
+          onValueChange={setPassword}
           placeholder="Ingrese una contraseña"
-          onChange={(e) => setPassword(e.target.value)}
         />
         <p className="font-bold sm:hidden -mb-2">Seleccione el rol</p>
         <Select
@@ -218,13 +218,7 @@ const U_add = () => {
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF</p>
             </div>
-            <input
-              id="dropzone-file"
-              type="file"
-              className="hidden"
-              accept="image/*"
-              onChange={handleImageChange}
-            />
+            <input id="dropzone-file" type="file" className="hidden" accept="image/*" onChange={handleImageChange} />
           </label>
         </div>
         <div className="flex flex-wrap flex-row w-full">

@@ -185,9 +185,7 @@ const S_nuevo = () => {
 
       // Upload each image to Cloudinary and get the URLs
       const uploadedImages = await Promise.all(imagenes.map((file) => uploadImageToCloudinary(file)));
-      const uploadedImagesDoc = await Promise.all(
-        imagenesDoc.map((file) => uploadImageToCloudinaryDoc(file))
-      );
+      const uploadedImagesDoc = await Promise.all(imagenesDoc.map((file) => uploadImageToCloudinaryDoc(file)));
 
       // Format the data including the uploaded image URLs
       const formattedData = {
@@ -280,15 +278,15 @@ const S_nuevo = () => {
             label="Nombre"
             isRequired
             placeholder="Ingrese el nombre del beneficiario"
-            onChange={(e) => setNombre(e.target.value)}
             value={nombre}
+            onValueChange={setNombre}
           />
           <Input
             type="text"
             label="Nombre Actividad Social"
             placeholder="Nombre de la Actividad social a la que pertenece"
             value={nombreActividad}
-            onChange={(e) => setNombreActividad(e.target.value)}
+            onValueChange={setNombreActividad}
           />
           <Input
             type="Date"
@@ -297,9 +295,7 @@ const S_nuevo = () => {
             placeholder="Ingrese una fecha de nacimiento"
             onChange={(e) =>
               setFechaNacimiento(
-                new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                  .toISOString()
-                  .split("T")[0]
+                new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
               )
             }
           />
@@ -308,7 +304,7 @@ const S_nuevo = () => {
             label="Saldo total"
             value={saldoTotal}
             placeholder="Saldo total o inicial"
-            onChange={(e) => setSaldoTotal(e.target.value)}
+            onValueChange={setSaldoTotal}
           />
         </div>
         <div className="grid gap-4 mb-6 md:grid-cols-2 w-11/12 m-auto sm:w-11/12 rounded-lg border border-gray-500 dark:border-white px-6 py-4">
@@ -318,66 +314,54 @@ const S_nuevo = () => {
             label="Nombre del encargado"
             value={nombreEncargado}
             placeholder="Nombre del encargado"
-            onChange={(e) => setNombreEncargado(e.target.value)}
+            onValueChange={setNombreEncargado}
           />
           <Input
             type="text"
             label="Teléfono del encargado"
             value={telefonoEncargado}
             placeholder="Teléfono del encargado"
-            onChange={(e) => setTelefonoEncargado(e.target.value)}
+            onValueChange={setTelefonoEncargado}
           />
           <Textarea
             type="text"
             label="Observaciones"
             placeholder="Observaciones"
             value={observaciones}
-            onChange={(e) => setObservaciones(e.target.value)}
+            onValueChange={setObservaciones}
           />
           <Textarea
             type="text"
             label="Otros datos"
             value={otrosDatos}
             placeholder="Otros Datos"
-            onChange={(e) => setOtrosDatos(e.target.value)}
+            onValueChange={setOtrosDatos}
           />
         </div>
         <div className="grid gap-4 mb-6 md:grid-cols-2 w-11/12 m-auto sm:w-11/12 rounded-lg border border-gray-500 dark:border-white px-6 py-4">
           <h1 className="sm:hidden md:hidden font-bold text-xl">Más datos del beneficiario</h1>
-          <Input
-            type="text"
-            label="DPI"
-            placeholder="Ingrese DPI"
-            onChange={(e) => setDpi(e.target.value)}
-            value={dpi}
-          />
+          <Input type="text" label="DPI" placeholder="Ingrese DPI" onValueChange={setDpi} value={dpi} />
           <Input
             type="text"
             label="Comunidad"
             value={comunidad}
             placeholder="Ingrese comunidad a la que pertenece"
-            onChange={(e) => setComunidad(e.target.value)}
+            onValueChange={setComunidad}
           />
-          <Input
-            type="text"
-            label="Dirección"
-            placeholder="Dirección"
-            onChange={(e) => setDireccion(e.target.value)}
-            value={direccion}
-          />
+          <Input type="text" label="Dirección" placeholder="Dirección" onValueChange={setDireccion} value={direccion} />
           <Input
             type="text"
             label="Estado Civil"
             value={estadoCivil}
             placeholder="Ingrese el estado civil"
-            onChange={(e) => setEstadoCivil(e.target.value)}
+            onValueChange={setEstadoCivil}
           />
           <Input
             type="text"
             label="Teléfono"
             value={telefono}
             placeholder="Ingrese un número de teléfono"
-            onChange={(e) => setTelefono(e.target.value)}
+            onValueChange={setTelefono}
           />
           <Input
             type="date"
@@ -386,9 +370,7 @@ const S_nuevo = () => {
             value={new Date(Date.now() + 86400000).toISOString().split("T")[0]}
             onChange={(e) =>
               setFechaRegistro(
-                new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                  .toISOString()
-                  .split("T")[0]
+                new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
               )
             }
           />
@@ -399,9 +381,7 @@ const S_nuevo = () => {
             placeholder="Fecha de salida del programa"
             onChange={(e) =>
               setFechaSalida(
-                new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                  .toISOString()
-                  .split("T")[0]
+                new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
               )
             }
           />

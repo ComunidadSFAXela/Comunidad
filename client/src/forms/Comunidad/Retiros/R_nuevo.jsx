@@ -100,18 +100,18 @@ const R_nuevo = () => {
         <Input
           type="text"
           label="Nombre retiro"
+          value={nombreRetiro}
+          onValueChange={setNombreRetiro}
           placeholder="Ingrese el nombre del retiro"
-          onChange={(e) => setNombreRetiro(e.target.value)}
         />
         <Input
           type="Date"
           label="Fecha de inicio"
           placeholder="Fecha inicio"
+          value={fechaInicio}
           onChange={(e) =>
             setFechaInicio(
-              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                .toISOString()
-                .split("T")[0]
+              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
             )
           }
         />
@@ -119,11 +119,10 @@ const R_nuevo = () => {
           type="Date"
           label="Fecha final"
           placeholder="Fecha final"
+          value={fechaFinal}
           onChange={(e) =>
             setFechaFinal(
-              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000) + 86400000)
-                .toISOString()
-                .split("T")[0]
+              new Date(e.target.valueAsNumber - (e.target.valueAsNumber % 86400000)).toISOString().split("T")[0]
             )
           }
         />
@@ -131,25 +130,29 @@ const R_nuevo = () => {
           type="text"
           label="Encargados"
           placeholder="Ingrese a los encargados"
-          onChange={(e) => setEncargados(e.target.value)}
+          value={encargados}
+          onValueChange={setEncargados}
         />
         <Input
           type="text"
           label="Lugar / ubicación"
           placeholder="Ingrese una dirección"
-          onChange={(e) => setLugar(e.target.value)}
+          value={lugar}
+          onValueChange={setLugar}
         />
         <Input
           type="Number"
           label="Ofrenda"
           placeholder="Ingrese una ofrenda"
-          onChange={(e) => setOfrenda(e.target.value)}
+          value={ofrenda}
+          onValueChange={setOfrenda}
         />
         <Input
           type="text"
           label="Horarios"
           placeholder="Ingrese los horarios"
-          onChange={(e) => setHorarios(e.target.value)}
+          value={horarios}
+          onValueChange={setHorarios}
         />
         <p className="font-bold text-[18px] sm:hidden -mb-2">Seleccione el tipo de retiro:</p>
         <Dropdown options={tipo} onChange={handleSelectTipo} value={selectedTipo} />

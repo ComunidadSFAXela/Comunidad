@@ -149,39 +149,39 @@ const F_agregar_producto = () => {
             type="text"
             label="Nombre"
             placeholder="Ingrese el nombre del producto"
-            onChange={(e) => setNombre(e.target.value)}
+            value={nombre}
+            onValueChange={setNombre}
           />
           <Checkbox onValueChange={() => setAntibiotico(!antibiotico)}>¿Es antibiótico?</Checkbox>
           <Input
             type="Number"
             label="Cantidad Inicio"
             placeholder="Ingrese cantidad inicial"
-            onChange={(e) => setCantidad(e.target.value)}
+            value={cantidad}
+            onValueChange={setCantidad}
           />
           <Input
             type="Number"
             label="Precio"
             placeholder="Ingrese el precio"
-            onChange={(e) => setPrecio(e.target.value)}
+            value={precio}
+            onValueChange={setPrecio}
           />
-          <Input type="text" label="Tipo" placeholder="Tipo" onChange={(e) => setTipo(e.target.value)} />
+          <Input type="text" label="Tipo" placeholder="Tipo" value={tipo} onValueChange={setTipo} />
           <Input
             type="text"
             label="Casa farmacéutica"
             placeholder="Casa farmacéutica"
-            onChange={(e) => setCasaFarmaceutica(e.target.value)}
+            value={casaFarmaceutica}
+            onValueChange={setCasaFarmaceutica}
           />
-          <Input
-            type="text"
-            label="Proveedor"
-            placeholder="Proveedor"
-            onChange={(e) => setProveedor(e.target.value)}
-          />
+          <Input type="text" label="Proveedor" placeholder="Proveedor" value={proveedor} onValueChange={setProveedor} />
           <Input
             type="text"
             label="Observaciones"
             placeholder="Observaciones"
-            onChange={(e) => setObservaciones(e.target.value)}
+            value={observaciones}
+            onValueChange={setObservaciones}
           />
           <p className="font-bold text-[18px] sm:hidden -mb-2">Ingrese fotografías:</p>
           <div className="flex items-center justify-center w-full">
