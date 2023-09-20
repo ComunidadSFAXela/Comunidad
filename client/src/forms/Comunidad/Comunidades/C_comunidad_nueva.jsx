@@ -18,7 +18,7 @@ const C_comunidad_nueva = () => {
   // useState para los demás campos que no sean dropdown
   const [nombreCursoCreci, setNombreCursoCreci] = useState("");
   const [lugar, setLugar] = useState("");
-  const [horarios, setHorarios] = useState("");
+  const [horarios, setHorarios] = useState("");zzz
 
   const handleSubmit = async () => {
     const dataFinal = {
