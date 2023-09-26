@@ -22,6 +22,13 @@ connect();
 //Creamos el enrutador
 const app = express();
 
+//All cors
+app.all("/", function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
+
 //usamos cors para evitar errores de CORS
 app.use(
   cors({
@@ -33,6 +40,8 @@ app.use(
       "http://localhost:5173",
       "127.0.0.1:3000",
       "https://excited-pocketbook-toad.cyclic.cloud",
+      "https://excited-pocketbook-toad.cyclic.cloud/api",
+      "https://csfaxela.netlify.app",
       "https://csfaxela.netlify.app",
       "https://csfa.*",
       "https://*.netlify.app",
