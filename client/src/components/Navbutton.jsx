@@ -76,9 +76,9 @@ const Navbutton = () => {
                 <Tab key="retirosLista" title="Por retiro">
                   <R_buscar_retiro />
                 </Tab>
-                <Tab key="retirosAgregar" title="Agregar a retiro">
+                {/* <Tab key="retirosAgregar" title="Agregar a retiro">
                   <R_agregarPersonas />
-                </Tab>
+                </Tab> */}
               </Tabs>
             </CardBody>
           </Card>
