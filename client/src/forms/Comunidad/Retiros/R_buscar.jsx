@@ -111,7 +111,7 @@ const R_buscar = () => {
                     onOpen();
                   }}
                 >
-                  <Card className="w-full h-full grid center hover:bg-slate-500">
+                  <Card className="w-full h-full grid center  hover:bg-neutral-200 dark:hover:bg-neutral-700">
                     <CardHeader className="flex p-0 m-0">
                       <div className="flex items-center">
                         <div className="transform -rotate-90 opacity-30 origin-center text-2xl p-0 -m-2 font-extrabold">

@@ -161,7 +161,7 @@ const U_todos = () => {
           resultados.map((usuario, idx) => (
             <React.Fragment key={idx}>
               <div
-                className="flex my-2 p-4 border-1 border-gray-300 dark:border-gray-600 rounded-xl shadow-lg dark:shadow-zinc-700 w-11/12 mx-auto sm:w-4/5"
+                className="flex my-2 p-4 border-1 cursor-pointer  hover:bg-neutral-200 dark:hover:bg-neutral-700 border-gray-300 dark:border-gray-600 rounded-xl shadow-lg dark:shadow-zinc-700 w-11/12 mx-auto sm:w-4/5"
                 onClick={() => {
                   setUsuarioSeleccionado(usuario);
                   onOpen();

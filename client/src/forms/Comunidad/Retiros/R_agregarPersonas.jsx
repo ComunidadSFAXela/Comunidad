@@ -146,7 +146,7 @@ const R_agregarPersonas = () => {
                   onOpen();
                 }}
               >
-                <Card className="w-full h-full grid center hover:bg-slate-500">
+                <Card className="w-full h-full grid center  hover:bg-neutral-200 dark:hover:bg-neutral-700">
                   <CardHeader className="flex gap-3">
                     <div className="flex flex-col">
                       <p className="text-md">
