@@ -16,9 +16,7 @@ router.post("/actividadComunidad/add", async (req, res) => {
       existingActividadComu.actividades = actividades;
       existingActividadComu.estado = estado;
       await existingActividadComu.save();
-      res
-        .status(200)
-        .json({ message: "Actividad actualizada correctamente", resultado: existingActividadComu });
+      res.status(200).json({ message: "Actividad actualizada correctamente", resultado: existingActividadComu });
     } else {
       // Si no existe, crea una nueva entrada
       const newActividadComu = new ActividadComu({
@@ -52,9 +50,9 @@ router.post("/actividadComunidad/getbyidActividad", async (req, res) => {
     const idPersona = req.body.idPersona;
 
     // Filtra los objetos en el array 'actividades' por idPersona
-    const actividadesConIdPersona = actividadComunidad.actividades.filter(
-      (actividad) => actividad.idPersona === idPersona
-    );
+    const actividadesConIdPersona = actividadComunidad.actividades
+      .filter((actividad) => actividad.idPersona === idPersona)
+      .sort((a, b) => new Date(a.start) - new Date(b.end));
 
     res.status(200).json(actividadesConIdPersona);
   } catch (error) {
