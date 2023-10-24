@@ -75,7 +75,7 @@ const Login = () => {
             <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Inicia Sesión en Comunidad San Francisco de Asís
             </h1>
-            <form className="space-y-4">
+            <div className="space-y-4">
               <div>
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Tu nombre de usuario
@@ -118,7 +118,7 @@ const Login = () => {
               >
                 Iniciar sesión
               </Button>
-            </form>
+            </div>
           </div>
         </div>
       </section>
