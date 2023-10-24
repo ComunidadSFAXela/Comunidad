@@ -47,9 +47,12 @@ const styles = StyleSheet.create({
   en2: { width: "200px", height: "auto", maxHeight: "60px" },
   en3: { width: "100px", height: "auto", maxHeight: "60px" },
   en4: { width: "150px", height: "auto", maxHeight: "60px" },
+  en5: { width: "150px", height: "auto", maxHeight: "60px", fontSize: "14px", fontWeight: "black" },
 });
 
 function DataToPDF({ data, value }) {
+  var sumaOfrendas = 0;
+
   return (
     <Document>
       <Page size="LETTER" orientation="landscape" style={styles.page}>
@@ -73,7 +76,7 @@ function DataToPDF({ data, value }) {
                 <Text>Tipo</Text>
               </View>
               <View style={[styles.tableCol, styles.en4]}>
-                <Text>Cuotas</Text>
+                <Text>Ofrendas</Text>
               </View>
             </View>
 
@@ -96,9 +99,27 @@ function DataToPDF({ data, value }) {
                   <Text>
                     {item?.retiros[0].cuota[0] > 0 ? item?.retiros[0]?.cuota.map((numero) => `Q${numero} `) : "---"}
                   </Text>
+                  {(sumaOfrendas += item?.retiros[0]?.cuota.reduce((total, item) => total + item, 0))}
                 </View>
               </View>
             ))}
+            <View style={(styles.tableRow, { backgroundColor: "#dedcdc", display: "flex", flexDirection: "row" })}>
+              <View style={[styles.tableCol, styles.en0]}>
+                <Text></Text>
+              </View>
+              <View style={[styles.tableCol, styles.en1]}>
+                <Text></Text>
+              </View>
+              <View style={[styles.tableCol, styles.en2]}>
+                <Text></Text>
+              </View>
+              <View style={[styles.tableCol, styles.en3]}>
+                <Text>Total recaudado:</Text>
+              </View>
+              <View style={[styles.tableCol, styles.en5]}>
+                <Text>Q. {sumaOfrendas ?? "---"}</Text>
+              </View>
+            </View>
           </View>
         </View>
       </Page>

@@ -47,9 +47,11 @@ const styles = StyleSheet.create({
   en2: { width: "200px", height: "auto", maxHeight: "60px" },
   en3: { width: "100px", height: "auto", maxHeight: "60px" },
   en4: { width: "150px", height: "auto", maxHeight: "60px" },
+  en5: { width: "150px", height: "auto", maxHeight: "60px", fontSize: "14px", fontWeight: "black" },
 });
 
 function DataToPDF({ data, value }) {
+  var sumaCurso = 0;
   return (
     <Document>
       <Page size="LETTER" orientation="landscape" style={styles.page}>
@@ -73,7 +75,7 @@ function DataToPDF({ data, value }) {
                 <Text>Tipo</Text>
               </View>
               <View style={[styles.tableCol, styles.en4]}>
-                <Text>Cuotas</Text>
+                <Text>Ofrendas</Text>
               </View>
             </View>
 
@@ -81,26 +83,44 @@ function DataToPDF({ data, value }) {
             {data.map((item, index) => (
               <View key={index} style={styles.tableRow}>
                 <View style={[styles.tableCol, styles.en0]}>
-                  <Text>{item.nombre}</Text>
+                  <Text>{item?.nombre}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en1]}>
-                  <Text>{item.telefono}</Text>
+                  <Text>{item?.telefono}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en2]}>
-                  <Text>{item.idcomunidad.nombreComunidad}</Text>
+                  <Text>{item?.idcomunidad?.nombreComunidad}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en3]}>
-                  <Text>{item.tipo}</Text>
+                  <Text>{item?.tipo}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en4]}>
                   <Text>
-                    {item?.crecimientos[0].cuota[0] > 0
+                    {item?.crecimientos[0]?.cuota[0] > 0
                       ? item?.crecimientos[0]?.cuota.map((numero) => `Q${numero} `)
                       : "---"}
                   </Text>
+                  {(sumaCurso += item?.crecimientos[0]?.cuota.reduce((total, item) => total + item, 0))}
                 </View>
               </View>
             ))}
+            <View style={(styles.tableRow, { backgroundColor: "#dedcdc", display: "flex", flexDirection: "row" })}>
+              <View style={[styles.tableCol, styles.en0]}>
+                <Text></Text>
+              </View>
+              <View style={[styles.tableCol, styles.en1]}>
+                <Text></Text>
+              </View>
+              <View style={[styles.tableCol, styles.en2]}>
+                <Text></Text>
+              </View>
+              <View style={[styles.tableCol, styles.en3]}>
+                <Text>Total recaudado</Text>
+              </View>
+              <View style={[styles.tableCol, styles.en5]}>
+                <Text>Q. {sumaCurso}</Text>
+              </View>
+            </View>
           </View>
         </View>
       </Page>
@@ -137,7 +157,6 @@ const RC2_personasPorCurso = () => {
 
       const data = await response.json();
       setResultadosBeneficiarios(data);
-      console.log(data);
       setLoading2(false);
     } catch (error) {
       setLoading2(false);
@@ -172,6 +191,7 @@ const RC2_personasPorCurso = () => {
       setResultados(data);
       setLoading(false);
       setLoading3(false);
+      console.log(data);
     } catch (error) {
       toast.error("Error al filtrar las personas por curso");
       setLoading(false);

@@ -337,6 +337,35 @@ const EditarPersona = () => {
     });
   }, [retirosActualizados, mensaje, crecimientosActualizados, selected]);
 
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value;
+
+    if (/^[0-9, ]*$/.test(inputValue)) {
+      // La entrada es válida, establece el estado y el color a predeterminado
+      setValueOfrendasCrecimiento(inputValue);
+      e.target.setCustomValidity("");
+      e.target.style.borderColor = "initial";
+    } else {
+      // La entrada es inválida, establece el estado y el color a error
+      e.target.setCustomValidity("Solo se permiten números, comas y espacios simples");
+      e.target.style.borderColor = "red";
+    }
+  };
+  const handleInputChangedos = (e) => {
+    const inputValue = e.target.value;
+
+    if (/^[0-9, ]*$/.test(inputValue)) {
+      // La entrada es válida, establece el estado y el color a predeterminado
+      setValueOfrendas(inputValue);
+      e.target.setCustomValidity("");
+      e.target.style.borderColor = "initial";
+    } else {
+      // La entrada es inválida, establece el estado y el color a error
+      e.target.setCustomValidity("Solo se permiten números, comas y espacios simples");
+      e.target.style.borderColor = "red";
+    }
+  };
+
   return (
     <div className="flex w-full flex-col pb-10 p-6">
       <Toaster />
@@ -628,8 +657,9 @@ const EditarPersona = () => {
                         type="text"
                         label="Ofrendas"
                         autoComplete="nope"
-                        placeholder="Ingrese las ofrendas"
-                        onChange={(e) => setValueOfrendas(e.target.value)}
+                        placeholder="Separado por comas, ejemplo: 10, 5, 20"
+                        value={valueOfrendas}
+                        onChange={handleInputChangedos}
                       />
                     </div>
                   </ModalBody>
@@ -690,8 +720,9 @@ const EditarPersona = () => {
                         type="text"
                         label="Ofrendas"
                         autoComplete="nope"
-                        placeholder="Ingrese las ofrendas"
-                        onChange={(e) => setValueOfrendasCrecimiento(e.target.value)}
+                        placeholder="Separado por comas, ejemplo: 10, 5, 20"
+                        onChange={handleInputChange}
+                        value={valueOfrendasCrecimiento}
                       />
                     </div>
                   </ModalBody>

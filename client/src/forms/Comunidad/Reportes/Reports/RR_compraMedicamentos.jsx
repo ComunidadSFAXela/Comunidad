@@ -60,9 +60,7 @@ function DataToPDF({ data }) {
     <Document>
       <Page size="LETTER" style={styles.page}>
         <View style={styles.section}>
-          <Text style={{ fontSize: 20, marginBottom: 10, textAlign: "center" }}>
-            Reporte compra de Medicamentos
-          </Text>
+          <Text style={{ fontSize: 20, marginBottom: 10, textAlign: "center" }}>Reporte compra de Medicamentos</Text>
           <View style={styles.table}>
             {/* Encabezado de la tabla */}
             <View style={[styles.tableRow, styles.tableHeader]}>
@@ -93,31 +91,29 @@ function DataToPDF({ data }) {
             {data.map((item, index) => (
               <View key={index} style={styles.tableRow}>
                 <View style={[styles.tableCol, styles.en0]}>
-                  <Text>{item.idmedicamento.label}</Text>
+                  <Text>{item?.idmedicamento?.label}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en1]}>
-                  <Text>{item.cantidad}</Text>
+                  <Text>{item?.cantidad}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en2]}>
-                  <Text>{formatfecha(item.fecha)}</Text>
+                  <Text>{formatfecha(item?.fecha)}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en3]}>
-                  <Text>Q. {item.precioCompra}</Text>
+                  <Text>Q. {item?.precioCompra}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en4]}>
-                  <Text>Q. {item.precioVenta}</Text>
+                  <Text>Q. {item?.precioVenta}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en5]}>
-                  <Text>{item.proveedor}</Text>
+                  <Text>{item?.proveedor}</Text>
                 </View>
                 <View style={[styles.tableCol, styles.en6]}>
-                  <Text>{item.observaciones}</Text>
+                  <Text>{item?.observaciones}</Text>
                 </View>
               </View>
             ))}
-            <View
-              style={(styles.tableRow, { backgroundColor: "#dedcdc", display: "flex", flexDirection: "row" })}
-            >
+            <View style={(styles.tableRow, { backgroundColor: "#dedcdc", display: "flex", flexDirection: "row" })}>
               <View style={[styles.tableCol, styles.en9]}>
                 <Text>Total de compra y total de ventas estimadas</Text>
               </View>
@@ -174,6 +170,8 @@ function RR_compraMedicamentos() {
       }
       const data = await response.json();
       setResultados(data.ingresosMedicamentos);
+      console.log(data);
+      console.log(data.ingresosMedicamentos);
       setLoading(false);
     } catch (error) {
       toast.error("Error al filtrar las compras");
@@ -226,20 +224,13 @@ function RR_compraMedicamentos() {
         <div className="flex flex-col text-center align-middle justify-items-center justify-center">
           {isMobile ? (
             <div className="p-8">
-              <h1 className="text-2xl font-bold text-danger">
-                ¡¡Parece que estás desde un dispositivo móvil!!
-              </h1>
+              <h1 className="text-2xl font-bold text-danger">¡¡Parece que estás desde un dispositivo móvil!!</h1>
               <h2 className="font-bold">
                 Por el momento el visor de documentos, solo está disponible en versión de escritorio
               </h2>
-              <h3>
-                Así que únicamente podrás descargar el archivo y verlo con alguna aplicación compatible.
-              </h3>
+              <h3>Así que únicamente podrás descargar el archivo y verlo con alguna aplicación compatible.</h3>
               <br />
-              <PDFDownloadLink
-                document={<DataToPDF data={resultados} />}
-                fileName="reporteCompraMedicamentos.pdf"
-              >
+              <PDFDownloadLink document={<DataToPDF data={resultados} />} fileName="reporteCompraMedicamentos.pdf">
                 {({ blob, url, loading, error }) =>
                   loading ? (
                     <h1>Cargando documento...</h1>

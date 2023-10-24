@@ -110,7 +110,16 @@ const F_agregar_producto = () => {
 
         // Show a success toast if the client was added successfully
         toast.success("Producto añadido correctamente");
-
+        //reset all forms
+        setNombre("");
+        setCantidad("");
+        setPrecio("");
+        setTipo("");
+        setCasaFarmaceutica("");
+        setProveedor("");
+        setObservaciones("");
+        setAntibiotico(false);
+        setImagenes([]);
         //esperamos 2 segundos
         await new Promise((resolve) => setTimeout(resolve, 2000));
         navigate("/farmacia");
