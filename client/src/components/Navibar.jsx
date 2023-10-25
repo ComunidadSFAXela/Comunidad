@@ -38,7 +38,7 @@ const Navibar = () => {
         <Navbar>
           <NavbarContent>
             <NavbarBrand>
-              <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+              <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="1em"
@@ -49,7 +49,7 @@ const Navibar = () => {
                 </svg>
               </RouterLink>
               <p className=" font-bold text-inherit text-left">
-                <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                   Comunidad San Francisco de Asís
                 </RouterLink>
               </p>
@@ -106,12 +106,7 @@ const Navibar = () => {
           </NavbarContent>
           <Dropdown placement="bottom-end" className="sm:hidden">
             <DropdownTrigger className="sm:hidden">
-              <Avatar
-                as="button"
-                className="transition-transform sm:hidden bg-transparent"
-                size="md"
-                src={comunidad}
-              />
+              <Avatar as="button" className="transition-transform sm:hidden bg-transparent" size="md" src={comunidad} />
             </DropdownTrigger>
             <DropdownMenu aria-label="Menu Actions" variant="flat">
               <DropdownItem key="login" className="text-primary">
@@ -174,7 +169,7 @@ const Navibar = () => {
         <Navbar>
           <NavbarContent>
             <NavbarBrand>
-              <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+              <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="1em"
@@ -185,7 +180,7 @@ const Navibar = () => {
                 </svg>
               </RouterLink>
               <p className=" font-bold text-inherit text-left">
-                <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                   Comunidad San Francisco de Asís
                 </RouterLink>
               </p>
@@ -242,12 +237,7 @@ const Navibar = () => {
           </NavbarContent>
           <Dropdown placement="bottom-end" className="sm:hidden">
             <DropdownTrigger className="sm:hidden">
-              <Avatar
-                as="button"
-                className="transition-transform sm:hidden bg-transparent"
-                size="md"
-                src={comunidad}
-              />
+              <Avatar as="button" className="transition-transform sm:hidden bg-transparent" size="md" src={comunidad} />
             </DropdownTrigger>
             <DropdownMenu aria-label="Menu Actions" variant="flat">
               <DropdownItem key="login" className="text-primary">
@@ -309,7 +299,7 @@ const Navibar = () => {
           <Navbar>
             <NavbarContent>
               <NavbarBrand>
-                <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1em"
@@ -320,7 +310,7 @@ const Navibar = () => {
                   </svg>
                 </RouterLink>
                 <p className=" font-bold text-inherit text-left">
-                  <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                  <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                     Comunidad SFA
                   </RouterLink>
                 </p>
@@ -521,7 +511,7 @@ const Navibar = () => {
           <Navbar>
             <NavbarContent>
               <NavbarBrand>
-                <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1em"
@@ -532,7 +522,7 @@ const Navibar = () => {
                   </svg>
                 </RouterLink>
                 <p className=" font-bold text-inherit text-left">
-                  <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                  <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                     Comunidad SFA
                   </RouterLink>
                 </p>
@@ -707,7 +697,7 @@ const Navibar = () => {
           <Navbar>
             <NavbarContent>
               <NavbarBrand>
-                <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1em"
@@ -718,7 +708,7 @@ const Navibar = () => {
                   </svg>
                 </RouterLink>
                 <p className=" font-bold text-inherit text-left">
-                  <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                  <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                     Comunidad SFA
                   </RouterLink>
                 </p>
@@ -974,7 +964,7 @@ const Navibar = () => {
           <Navbar>
             <NavbarContent>
               <NavbarBrand>
-                <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1em"
@@ -985,7 +975,7 @@ const Navibar = () => {
                   </svg>
                 </RouterLink>
                 <p className=" font-bold text-inherit text-left">
-                  <RouterLink to={"/"} className="py-2 -mx-3 px-3 text-[16px]">
+                  <RouterLink to={"/"} className="py-2 -mx-3 px-3 sm:text-[16px] text-[14px]">
                     Comunidad SFA
                   </RouterLink>
                 </p>
