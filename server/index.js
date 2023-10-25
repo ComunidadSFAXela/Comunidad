@@ -39,6 +39,8 @@ app.use(
       "http://127.0.0.1:5173",
       "http://localhost:5173",
       "127.0.0.1:3000",
+      "https://csfa.es",
+      "https://csfa",
       "https://excited-pocketbook-toad.cyclic.cloud",
       "https://excited-pocketbook-toad.cyclic.cloud/api",
       "https://csfaxela.netlify.app",
@@ -53,9 +55,9 @@ app.use(
       "*.app",
       ".app",
     ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    // methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-    optionsSuccessStatus: 200,
+    // optionsSuccessStatus: 200,
   })
 );
 
