@@ -4,8 +4,8 @@ import UMG from "/umg.png";
 
 const AboutPage = () => {
   return (
-    <>
-      <div className="flex flex-col items-center flex-wrap">
+    <div className="mb-64">
+      <div className="flex flex-col items-center flex-wrap ">
         <img src={comunidad} alt="Logo Comunidad San Francisco de Asís" className="h-3/6 w-3/6 sm:h-1/6 sm:w-1/6" />
         <h1 className="text-2xl font-extrabold text-center p-6">Comunidad San Francisco de Asís, Quetzaltenango</h1>
         <div className="w-8/12 sm:w-6/12 mb-8">
@@ -21,15 +21,16 @@ const AboutPage = () => {
           </h3>
         </div>
       </div>
-      <footer className="fixed bottom-0 w-full bg-neutral-200 dark:bg-neutral-800">
-        <span className="flex flex-row flex-nowrap gap-2 justify-center py-5">
-          <img src={UMG} className="-mt-2 h-10 w-10" alt="Logo Universidad Mariano Gálvez de Guatemala" />
-          Sistema creado por Cristopher Paiz, estudiante de la Universidad Mariano Gálvez de Guatemala, sede
-          Quetzaltenango, {new Date().getFullYear()}
-          <img src={UMG} className="-mt-2 h-10 w-10" alt="Logo Universidad Mariano Gálvez de Guatemala" />
+      <footer className="fixed bottom-0 w-full bg-neutral-200 mt-16 dark:bg-neutral-800">
+        <span className="px-5 sm:text-left text-center flex flex-row place-items-center flex-nowrap gap-2 justify-center py-5">
+          <img src={UMG} className=" h-10 w-10" alt="Logo Universidad Mariano Gálvez de Guatemala" />
+          Sistema creado por:
+          <br className="sm:hidden sm:inline-flex" /> Cristopher Paiz, estudiante de la Universidad Mariano Gálvez de
+          Guatemala, sede Quetzaltenango, {new Date().getFullYear()}
+          <img src={UMG} className=" h-10 w-10" alt="Logo Universidad Mariano Gálvez de Guatemala" />
         </span>
       </footer>
-    </>
+    </div>
   );
 };
 
