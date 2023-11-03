@@ -173,7 +173,7 @@ const Homepage = () => {
                 {cursos?.map((curso, index) => (
                   <div className="bg-slate-100 dark:bg-gray-800 rounded-lg shadow-md" key={index}>
                     <div className="relative">
-                      <span className="absolute top-[90px] right-2 bg-primary text-white text-2xl px-4 py-2 rounded-full">
+                      <span className="absolute top-[85px] right-2 bg-primary text-white text-2xl px-4 py-2 rounded-full">
                         Q. {curso?.ofrenda ?? ""}
                       </span>
                     </div>
@@ -252,7 +252,7 @@ const Homepage = () => {
                 {retiros?.map((retiro, index) => (
                   <div className="bg-slate-100 dark:bg-gray-800 rounded-lg shadow-md" key={index}>
                     <div className="relative">
-                      <span className="absolute top-[90px] right-2 bg-primary text-white text-2xl px-4 py-2 rounded-full">
+                      <span className="absolute top-[85px] right-2 bg-primary text-white text-2xl px-4 py-2 rounded-full">
                         Q. {retiro?.ofrenda ?? ""}{" "}
                       </span>
                     </div>
