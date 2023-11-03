@@ -1,5 +1,6 @@
 import React from "react";
 import comunidad from "/comunidad.svg";
+import UMG from "/umg.png";
 
 const AboutPage = () => {
   return (
@@ -20,6 +21,14 @@ const AboutPage = () => {
           </h3>
         </div>
       </div>
+      <footer className="fixed bottom-0 w-full bg-neutral-200 dark:bg-neutral-800">
+        <span className="flex flex-row flex-nowrap gap-2 justify-center py-5">
+          <img src={UMG} className="-mt-2 h-10 w-10" alt="Logo Universidad Mariano Gálvez de Guatemala" />
+          Sistema creado por Cristopher Paiz, estudiante de la Universidad Mariano Gálvez de Guatemala, sede
+          Quetzaltenango, {new Date().getFullYear()}
+          <img src={UMG} className="-mt-2 h-10 w-10" alt="Logo Universidad Mariano Gálvez de Guatemala" />
+        </span>
+      </footer>
     </>
   );
 };
