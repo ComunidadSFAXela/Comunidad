@@ -4,6 +4,7 @@ import { Button, Checkbox } from "@nextui-org/react";
 import { Link, Link as RouterLink, useNavigate } from "react-router-dom";
 import { contexto } from "../context/ContextProvider";
 import toast, { Toaster } from "react-hot-toast";
+import UMG from "/umg.png";
 
 const Login = () => {
   const [nombreUsuario, setNombreUsuario] = useState("");
@@ -70,9 +71,14 @@ const Login = () => {
               src={comunidad}
               alt="logo"
             />
+            <img
+              className="w-[36%] w-[36%] m-auto -mt-[65px] -mb-[20px] sm:-mb-[60px] sm:w-[120px]"
+              src={UMG}
+              alt="logo"
+            />
           </a>
           <div className="p-6 space-y-4">
-            <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            <h1 className="sm:mt-3 text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Inicia Sesión en Comunidad San Francisco de Asís
             </h1>
             <div className="space-y-4">
@@ -113,8 +119,7 @@ const Login = () => {
                 type="submit"
                 onClick={obtenerTipoUsuario}
                 className="w-full text-white bg-danger-600 hover:bg-danger-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                isDisabled={accepted}
-              >
+                isDisabled={accepted}>
                 Iniciar sesión
               </Button>
             </div>
